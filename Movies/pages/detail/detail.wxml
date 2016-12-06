@@ -1,0 +1,10 @@
+<scroll-view class = "page-body" scroll-y = "true">
+	<view class = "item" >
+		<image class = "poster" src = "{{item.poster}}"></image>
+		<text class = "title">{{item.title}}</text>
+		<text class = "info">主演:{{item.actors}}</text>
+		<text class = "info">国家:{{item.country}}</text>
+		<text class = "info">影片类型:{{item.genres}}</text>
+		
+	</view>
+</scroll-view>

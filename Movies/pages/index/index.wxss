@@ -1,0 +1,13 @@
+.item{
+	display: flex;
+	padding: 20rpx 40rpx;
+	border: 2rpx solid #eee;
+}
+.item .poster{
+	width: 128rpx;
+	height: 128rpx;
+	margin-right: 20rpx;
+}
+.item .title{
+	font-size: 32rpx;
+}

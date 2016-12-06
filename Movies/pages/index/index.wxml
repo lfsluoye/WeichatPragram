@@ -1,0 +1,11 @@
+<view class = "page-header">
+	<text class = "page-header-text">今日影讯</text>
+</view>
+<scroll-view class = "page-body" scroll-y = "true">
+	<navigator wx:for= "{{moviesInfo}}" url = "../detail/detail?id={{item.movieId}}" >
+		<view class = "item">
+			<image class = "poster" src = "{{item.pic_url}}"></image>
+			<text class = "title">{{item.movieName}}</text>
+		</view>
+	</navigator>
+</scroll-view>

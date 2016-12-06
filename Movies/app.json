@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/profile/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "小小影讯",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color":"#ccc",
+    "list":[{
+        "text":"今日电影",
+        "iconPath":"images/tabbar_mainframe.png",
+        "selectedIconPath":"images/tabbar_mainframeHL.png",
+        "pagePath":"pages/index/index"
+    },
+    {
+        "text":"搜索",
+        "iconPath":"images/tabbar_discover.png",
+        "selectedIconPath":"images/tabbar_discoverHL.png",
+        "pagePath":"pages/search/search"
+    },
+    {
+        "text":"我的",
+        "iconPath":"images/tabbar_me.png",
+        "selectedIconPath":"images/tabbar_meHL.png",
+        "pagePath":"pages/profile/profile"
+    }
+    ]
+  }
+}
