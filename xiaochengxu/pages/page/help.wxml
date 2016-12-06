@@ -1,0 +1,19 @@
+<!--index.wxml-->
+
+<view class="line">
+
+     <block wx:for="{{article_list}}">
+          <navigator url="detail?id={{item.article_id}}">
+               <view class="item-tree">
+                    <view class="groumName">{{item.article_title}}</view>
+                    <image src="../../images/system/tip.png" class="tree_image_right"/> 
+               </view>
+               
+               <view class="line-narrow"></view> 
+          </navigator>
+     </block>
+     
+</view>
+
+
+

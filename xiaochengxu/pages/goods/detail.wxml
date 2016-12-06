@@ -1,0 +1,159 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+
+
+
+<view class="goods_container">
+
+    <!--顶部轮播-->
+    <view class="modelSwiper">
+        <swiper>
+            <swiper-item wx:for="{{goods_img}}">
+                <image src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <!--商品信息-->
+    <view class="goodsInfo">
+        <text class="goodsName">{{goods_info.goods_name}}</text>
+        <view class="unit goodsPrice">
+            <text class="cost">￥</text>
+            <text class="inner">{{goods_info.goods_price}}</text>
+        </view>
+        <view class="unit goodsMarketprice">
+            <text class="cost">￥</text>
+            <text class="inner">{{goods_info.goods_marketprice}}</text>
+        </view>
+        <view class="goodsTransport">
+            <text class="gtInner">送至</text><text class="address">全国</text>
+            <text class="freight" wx:if="{{goods_info.goods_freight==0}}">免运费</text>
+            <text class="freight" wx:else>运费：{{goods_info.goods_freight}}</text>
+        </view>
+    </view>
+    
+    <!--商品选择-->
+    <view class="chooseGoods" catchtap="buy" wx:if="{{goods_info.goods_spec}}">
+        <text>已选</text>
+        <text class="goodsType" wx:for="{{goods_info.goods_spec}}">{{item}}</text>
+        <text class="icon">></text>
+    </view>
+
+
+    <!--店铺展示-->
+    <view class="storeShow">
+        <image src="{{store_info.store_label}}"></image>
+        <text>{{store_info.store_name}}店铺</text>
+        <text class="icon">></text>
+    </view>
+
+     <!--商品详情-->
+    <view class="detailWrap">
+        <view class="wxParse">
+            <!--基础实现方式-->
+            <template is="wxParse" data="{{wxParseData}}"/>
+        </view>
+    </view>
+
+
+    <!--商品推荐-->
+    <view class="storeWrap">
+        <navigator url="detail?goods_id={{item.goods_id}}" class="storeCommend {{index+1==2 || index+1==5 ?'item':''}}" wx:for="{{goods_commend}}">
+            <image src="{{item.goods_image_url}}"></image>
+            <text class="scName">{{item.goods_name}}</text>
+            <text class="cost">￥</text><text class="scPrice">{{item.goods_price}}</text>
+        </navigator>
+    </view>
+
+
+    <!--底部功能-->
+    <view class="modelWrap">
+        <view class="modelBottom">
+            <view class="mbLside">
+                <view class="catchtapWrap">
+                    <view class="catchtapIcon"></view>
+                    <view class="catchtap">客服</view>
+                </view>
+                <view class="cartWrap">
+                    <view class="cartIcon"></view>
+                    <view class="cart">购物车</view>
+                </view>
+            </view>
+            <view class="mbRside">
+                <view class="addCart" catchtap="buy">加入购物车</view>
+                <view class="buy" catchtap="buy">立即购买</view>
+            </view>
+        </view>
+    </view>
+
+</view>
+
+<!--商品购买弹出层-->
+<view class="buyWrap">
+    <view class="buyBgLside" animation="{{buyBgLside}}" catchtap="buyBg"></view>
+    <view class="buyBgRside" animation="{{buyBgRside}}" catchtap="buyBg"></view>
+    <view class="buyModel" animation="{{buyModel}}">
+        <view class="buyContent">
+
+            <view class="buyinfo">
+                <!--商品图片-->
+                <view class="buyLside">
+                    <image src="{{goods_img[0]}}"></image>
+                </view>
+
+                <!--商品信息-->
+                <view class="buyRside">
+                    <text class="goodsName">{{goods_info.goods_name}}</text>
+                    <view class="goodsInner">
+                        <text class="cost">￥</text><text class="goodsPrice">{{goods_info.goods_price}}</text>
+                        <text class="inventory">库存：{{goods_info.goods_storage}}</text>
+                    </view>
+                </view>
+            </view>
+
+
+            <!--选择种类-->
+            <view class="buyType" wx:if="{{goods_info.spec_name}}">
+                <block wx:for="{{goods_info.spec_name}}" wx:for-index="nameIndex" wx:for-item="nameItem">
+                    <text>{{nameItem}}：</text>
+                    <view class="typeWrap">
+                        <view id="{{spec_list[index]}}" data-id="{{index}}" catchtap="buyType" class="{{index == val ? 'choose' : ''}}" wx:for="{{goods_info.spec_value[nameIndex]}}">{{item}}</view>
+                    </view>
+                </block>
+            </view>
+
+
+            <!--选择数量-->
+            <view class="chooseNum">
+                <text>选择数量：</text>
+                <view class="num">
+                    <view class="minus" catchtap="minus" data-num="{{num}}">-</view>
+                    <input type="number" value="{{num}}" bindinput="import" disabled="false"/>
+                    <view class="add" catchtap="add" data-num="{{num}}">+</view>
+                </view>
+            </view>
+
+            <!--弹出层底部功能-->
+            <view class="modelWrap">
+                <view class="modelBottom">
+                    <view class="mbLside">
+                        <view class="catchtapWrap">
+                            <view class="catchtapIcon"></view>
+                            <view class="catchtap">客服</view>
+                        </view>
+                        <view class="cartWrap">
+                            <view class="cartIcon"></view>
+                            <view class="cart">购物车</view>
+                        </view>
+                    </view>
+                    <view class="mbRside">
+                        <view class="addCart" catchtap="addCart">加入购物车</view>
+                        <navigator url="../buy/index?goods_id={{goods_info.goods_id}}&buynum={{num}}" class="buy">立即购买</navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="buyCloseBg">
+            <view class="buyClose" catchtap="buyBg"></view>
+        </view>
+    </view>
+</view>

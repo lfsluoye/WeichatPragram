@@ -1,0 +1,61 @@
+<!--pages/my/addressOpera.wxml-->
+<view class="main">  
+    <view class="line-narrow"></view>
+    
+    <form bindsubmit="save">
+        <view class="content">
+            <view class="name">
+                <view class="txtname">联系人</view>
+                <input placeholder="请输入真实姓名" class="iname" bindinput="contacts"/>
+            </view>
+
+            <view class="name">
+                <view class="txtname">联系电话</view>
+                <input placeholder="请输入真实号码" class="iname" bindinput="phone"/>
+            </view>
+
+            <view class="quyuname">
+            <view class="txtname quyutxt">区域选择</view>
+
+            <view class="chooseWrap">
+                <view class="section">
+                    <picker value="{{provinceIndex}}" range="{{provinceList}}" bindchange="bindProvinceChange">
+                        <view class="picker">
+                            省份：{{provinceList[provinceIndex]}}
+                        </view>
+                    </picker>
+                </view>
+
+                <view class="section">
+                    <picker value="{{cityIndex}}" range="{{cityList}}" bindchange="bindCityChange">
+                        <view class="picker">
+                            城市：{{cityList[cityIndex]}}
+                        </view>
+                    </picker>
+                </view>
+
+                <view class="section">
+                    <picker value="{{areaIndex}}" range="{{areaList}}" bindchange="bindAreaChange">
+                        <view class="picker">
+                            区县：{{areaList[areaIndex]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+            <view class="address">
+                <view class="txtname">具体地址</view>
+                <input placeholder="填写具体地址" class="iname" bindinput="detail"/>
+            </view>
+
+            <view class="default">
+                <view class="txtname">设为默认地址</view>
+                <switch bindchange="switchChange" class="switch"/>
+            </view>
+        
+        </view>
+
+        <navigator url="address" class="addbtn" bindtap="add">保存</navigator>
+    </form>
+</view>

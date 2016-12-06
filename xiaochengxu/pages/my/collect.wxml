@@ -1,0 +1,61 @@
+<scroll-view scroll-y="true" bindscrolltolower="loadList" class="layout" bindscrolltolower="scrolltolower">
+
+    <view class="line-narrow"></view>
+
+    <view class="clear-view">
+        <view hidden="{{clearhidden}}" bindchange="clearChange">
+            <view class="img">
+                <image  src=""/>
+            </view>
+
+            <view class="txt see-txt">咻~没有我喜欢的昂</view>
+            <view class="txt buy-txt">可以去看看哪些想要买的</view>
+            <navigator url="../goods/index">
+               <view class="btn">随便逛逛</view>
+           </navigator>
+        </view>
+    </view>
+
+    <!-- list start -->
+    <view class="top">
+        <navigator wx:key="unique" wx:for="{{favorites_list}}">
+            <view class="item-box">
+                <view class="item-img">
+                    <navigator url="../goods/detail?goods_id={{item.goods_id}}">
+                        <image src="{{item.goods_image_url}}"></image>
+                    </navigator>
+                    
+                </view>
+
+                <view class="item-right">
+                    <view class="item-title">
+                        <navigator url="../goods/detail?goods_id={{item.goods_id}}">{{item.goods_name}}</navigator>
+                    </view>
+
+                    <view class="{{item.selling == '售罄' ? 'item-selling' : 'item-hot' }}">{{item.selling}}</view>
+
+                    <view class="right">
+                        <view class="item-price">￥{{item.goods_promotion_price}}</view>
+
+                        <view class="item-del" bindtap="actionsheet" data-id="{{index}}">
+                            <image src="../../images/system/del_b.png"></image>
+                        </view>
+                        
+                    </view>
+                </view>
+            </view>
+
+            <view class="line-narrow"></view>
+        </navigator>
+    </view>
+    <!-- / list end -->
+
+    <!-- loading start -->
+    <view class="body-view">
+        <loading hidden="{{hidden}}" bindchange="loadingChange">
+            加载中...
+        </loading>
+    </view>
+    <!-- / loading end -->
+</scroll-view>
+

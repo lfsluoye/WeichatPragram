@@ -1,0 +1,150 @@
+.container{
+	height:100%;
+}
+/*订单筛选*/
+.classifyWrap{
+	height:80rpx;
+}
+.classifyWrap .classify{
+	border-bottom: 2px solid #eee;
+	height:80rpx;
+	line-height:80rpx;
+	position:fixed;
+	width:100%;
+	background:#fff;
+	z-index:5;
+}
+.classifyWrap .classify view{
+	width:20%;
+	display:inline-block;
+	text-align:center;
+	font-size:30rpx;	
+	color:#333;
+	height:76rpx;
+}
+.current{
+	border-bottom:2px solid #3aac6a;
+}
+
+
+/*订单信息*/
+.orderWrap{
+	
+}
+.orderWrap .orderList{
+	
+}
+.orderWrap .orderList .storeInfo{
+	padding:30rpx;
+	border-bottom:1px solid #eee;
+}
+.orderWrap .orderList .storeInfo image{
+	width:38rpx;
+	height:38rpx;
+	vertical-align:middle;
+}
+.orderWrap .orderList .storeInfo text{
+	vertical-align:middle;
+	font-size:30rpx;	
+	margin-left:25rpx;
+}
+.orderWrap .orderList .goodsInfo{
+	padding:20rpx 30rpx;
+	overflow:hidden;
+}
+.orderWrap .orderList .goodsInfo .goodsLside{
+	float:left;
+}
+.orderWrap .orderList .goodsInfo .goodsLside image{
+	width:120rpx;
+	height:120rpx;
+}
+.orderWrap .orderList .goodsInfo .goodsRside{
+	margin-left:150rpx;
+	height:120rpx;
+	position:relative;
+}
+.orderWrap .orderList .goodsInfo .goodsRside .goodName{
+	font-size:30rpx;
+	display:inline-block;	
+}
+.orderWrap .orderList .goodsInfo .goodsRside .goosInner{
+	position:absolute;
+	width:100%;
+	bottom:0;
+	overflow:hidden;
+}
+.orderWrap .orderList .goodsInfo .goodsRside .goosInner .priceWrap{
+	float:left;
+}
+.orderWrap .orderList .goodsInfo .goodsRside .goosInner .numWrap{
+	float:right;
+}
+.orderWrap .orderList .goodsInfo .goodsRside .goodsPrice{
+	font-size:38rpx;
+	color:#DB4453;
+}
+.orderWrap .orderList .goodsInfo .goodsRside .goodsNum{
+	font-size:38rpx;
+	color:#DB4453;
+}
+.cost{
+	margin:0 5rpx;
+	font-size:23rpx;
+	color:#DB4453;	
+}
+.numIcon{
+	margin:0 5rpx;
+	font-size:35rpx;
+	color:#DB4453;	
+}
+
+
+/*无内容*/
+.orderNone{
+	position:absolute;
+	top:30%;
+	left:50%;
+	text-align:center;
+	height:250rpx;
+	width:350rpx;
+	margin-left:-175rpx;
+}
+.orderNone .bg{
+	background:#DDD;
+	width:110rpx;
+	height:110rpx;
+	border-radius:100%;
+	padding:30rpx;
+	margin:0 auto;
+	line-height:100rpx;
+}
+.orderNone image{
+	width:100%;
+	height:100%;
+	display:block;
+}
+.orderNone text{
+	display:block;
+	margin:25rpx 0;
+}
+.orderNone .prompt{
+	font-size:35rpx;
+	color:#6d6d6d;
+}
+.orderNone .inner{
+	font-size:30rpx;
+	color:#999;
+}
+.orderNone navigator{
+	font-size:30rpx;
+	border-radius:3px;
+	border: 1px solid #ccc;
+	padding:15rpx 0;
+	color:#555;
+}
+
+/*微信支付*/
+.wxpay{
+	width:90%;
+}

@@ -1,0 +1,50 @@
+<scroll-view style="height:{{winHeight}}px" class="container" scroll-y="true" lower-threshold="50" bindscrolltolower="scrolltolower">
+	<view class="classifyWrap">
+		<view class="classify">
+			<view wx:for="{{classify}}" id="{{state}}" data-id="{{index * 10}}" class="{{state == index * 10 ? 'current' : ''}}" catchtap="orderItem">{{item}}</view>
+		</view>
+	</view>
+	<view class="orderWrap">
+
+		<!--内容-->
+		<view class="orderList" wx:for="{{orderList}}" wx:for-item="list">
+
+			<view class="storeInfo">
+				<image src="../../images/system/buy2.png"></image>
+				<text>{{list.order_list[0].store_name}}</text>
+			</view>
+			<view class="goodsInfo" wx:for="{{list.order_list[0].extend_order_goods}}">
+				<view class="goodsLside">
+					<image src="{{item.goods_image_url}}"></image>
+				</view>
+				<view class="goodsRside">
+					<text class="goodName">{{item.goods_name}}</text>
+					<view class="goosInner">
+						<view class="priceWrap">
+							<text class="cost">￥</text>
+							<text class="goodsPrice">{{item.goods_price}}</text>
+						</view>
+						<view class="numWrap">
+							<text class="numIcon">x</text>
+							<text class="goodsNum">{{item.goods_num}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<block wx:if="{{list.order_list[0].order_state == 10}}">
+				<button type="primary" class="wxpay">微信支付</button>
+			</block>
+		</view>
+
+		<!--无内容-->
+		<view class="orderNone" hidden="{{has}}">
+			<view class="bg">
+				<image src="../../images/system/order_none.png"></image>
+			</view>
+			<text class="prompt">您还没有相关的订单</text>
+			<text class="inner">可以去看看哪些想买的</text>
+			<navigator url="../goods/index">随便逛逛</navigator>
+		</view>
+
+	</view>
+</scroll-view>

@@ -1,0 +1,58 @@
+<view>
+    <view class="fff module module1">
+        <view class="header flex">
+            <view class="user">
+                <image class="userPic" src="{{memberInfo.user_avatar}}"></image>
+                <text class="userName">{{ memberInfo.username }}</text>
+            </view >
+        </view>
+
+        <view class="flex state">
+            <navigator url="../order/index?state=10" class="stateItem icon-pay">
+                <view class="icon"></view>
+                <text>待付款</text>
+            </navigator>
+            <navigator url="../order/index?state=20" class="stateItem icon-deliver">
+                <view class="icon"></view>
+                <text>待发货</text>
+            </navigator>
+            <navigator url="../order/index?state=30" class="stateItem icon-send">
+                <view class="icon"></view>
+                <text>待签收</text>
+            </navigator>
+            <!--<navigator url="../order/index?state=3" class="stateItem icon-goodsnew">
+                <view class="icon"></view>
+                <text>已完成</text>
+            </navigator>-->
+            <navigator url="../order/index?state=40" class="stateItem icon-post">
+                <view class="icon"></view>
+                <text>待评价</text>
+            </navigator>
+        </view>
+    </view>
+
+    <view>
+        <view class="fff module module2">
+            <navigator url="../../pages/my/collect" class="option arrows mui-icon-arrowright collect">
+                <view class="icon"></view>
+                <text class="optionTitle icon-favorfill">收藏商品</text>
+            </navigator>
+            <navigator url="../../pages/history/index" class="option arrows mui-icon-arrowright record">
+                <view class="icon"></view>
+                <text class="optionTitle icon-attentionfill">浏览记录</text>
+            </navigator>
+            <navigator url="../../pages/my/address" class="option arrows mui-icon-arrowright address">
+                <view class="icon"></view>
+                <text class="optionTitle icon-locationfill">我的收货地址</text>
+            </navigator>
+            <navigator url="../../pages/page/about" class="option arrows mui-icon-arrowright idea">
+                <view class="icon"></view>
+                <text class="optionTitle icon-writefill">关于我们</text>
+            </navigator>
+            <navigator url="../../pages/page/help" class="option arrows mui-icon-arrowright service">
+                <view class="icon"></view>
+                <text class="optionTitle icon-mobilefill">帮助中心</text>
+            </navigator>
+        </view>
+    </view>
+</view>

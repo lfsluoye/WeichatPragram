@@ -1,0 +1,18 @@
+<!--index.wxml-->
+
+<view class="line">
+
+     <image class="logo" src="../../images/system/logo1.png" />
+
+     <block wx:for="{{article_list}}" wx:for-index="idx" wx:for-index="i">
+          <navigator url="detail?id={{item.article_id}}" bindtap="aboutTap" id="{{item.article_id}}">
+               <view class="item-tree">                  
+                    <view class="groumName">{{item.article_title}}</view>
+                    <image src="../../images/system/tip.png" class="tree_image_right"/> 
+               </view>
+               
+               <view class="line-narrow"></view> 
+          </navigator>
+     </block>
+     
+</view>

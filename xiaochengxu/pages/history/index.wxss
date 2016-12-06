@@ -1,0 +1,43 @@
+/* pages/histiry/index.wxss */
+.line-narrow{
+    height: 2rpx;
+    width: 750rpx;
+    background-color: #E0E1E2;
+}
+.clear{
+    position: relative;
+    float: right;
+    margin-top: 15rpx;
+    margin-right: 25rpx;
+    color: #3aac6a;
+}
+.img{
+    background: url(../../images/system/no_data.png) no-repeat;
+    background-position: center;
+    background-size: 65%;
+}
+.txt{
+    text-align: center;
+}
+.see-txt{
+    font-size: 38rpx;
+}
+.buy-txt{
+    font-size: 33rpx;
+    margin: 20rpx 0;
+    color: #999;
+}
+.btn{
+    display: inline-block;
+    height: 56rpx;
+    padding: 0 56rpx;
+    color: #555;
+    line-height: 56rpx;
+    text-align: center;
+    background-color: #FFF;
+    border: solid 1px #CCC;
+    border-radius: 7rpx;
+    margin-top: 15rpx;
+    font-size: 26rpx;
+    margin-left: 260rpx;
+}

@@ -1,0 +1,32 @@
+<!--index.wxml-->
+
+<view class="nav">
+    <view class="nav-view" style="width: 100%">
+        <view data-gca="{{item.gca_id}}" data-current="{{index}}"  wx:key="unique" wx:for="{{category_list}}" id="{{index+1}}" 
+            catchtap="snacksTap" class="nav-name {{index == currentTab ? 'nav-hover' : ''}}">{{item.gca_name}}</view>
+    </view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+    <swiper-item  wx:key="unique" wx:for="{{category_list}}">
+        <scroll-view class="nav-scroll" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+            <view class='goods-item'  wx:key="unique" wx:for="{{goods_list}}"> 
+                <view class="goodsitem">
+                    <navigator url="detail?goods_id={{item.goods_id}}">
+                        <image class='productimg' src='{{item.goods_image}}'/>  
+                        <view class="producttext">
+                            <view class="goods-name">{{item.goods_name}}</view>
+                            <view class="price">￥{{item.goods_price}}</view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+
+            <view>
+                <view>{{more}}</view>
+            </view>   
+          </scroll-view>
+    </swiper-item>
+        
+</swiper>

@@ -1,0 +1,12 @@
+/* pages/page/detail.wxss*/
+.wxParse{
+    margin: 10rpx 25rpx 25rpx 25rpx;
+}
+.wxParse-p{
+    text-indent: 2em;
+    letter-spacing: 2px;
+}
+.wxParse-p image{
+    width: 600rpx !important;
+    height: 980rpx !important;
+}

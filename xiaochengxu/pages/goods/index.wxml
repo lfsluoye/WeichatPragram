@@ -1,0 +1,128 @@
+<!--index.wxml-->
+
+<view class="nav-scroll">
+    <scroll-view class="scroll-view-H" scroll-x="true" style="width: 100%">
+        <view data-gca="0" class="nav-name {{ 0== currentId ? 'nav-hover' : '' }} {{navHover}}" id="0" bindtap="handleTap">为您推荐</view>
+        <view data-gca="{{index+1}}" data-current="{{currentTab}}" wx:key="unique" wx:for="{{category}}" id="{{item.gca_id}}" 
+            bindtap="handleTap" class="nav-name {{item.gca_id == currentId ? 'nav-hover' : ''}}">{{item.gca_name}}</view>
+    </scroll-view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange"> 
+    <!-- 为您推荐 -->
+    <swiper-item >
+        <scroll-view class="hot-box" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+
+            <!-- banner 图片轮播 swiper -->
+            <!--<view class="banner" wx:key="unique" wx:for="{{mb_adv_list}}">
+                <image src="{{item.mb_adv_pic_url}}" class="slide-image" />
+            </view>-->
+            <view class="banner">
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:key="unique" wx:for="{{mb_adv_list}}">
+                        <swiper-item>
+                            <image src="{{item.mb_adv_pic_url}}" class="slide-image" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            
+            <view class='separator'></view>
+
+            <view class="goods-list">
+            
+                <view class="hot-item">
+                    <view>
+                        <view class="hot-icon"></view>
+                        <text class="titletext">最热商品</text>
+                    </view>
+                                    
+                    <view class="hot">
+                        <navigator wx:key="unique" wx:for="{{hot}}" url="detail?goods_id={{item.goods_id}}">
+                            <image src="{{item.goods_image}}"/>
+                            <view class="hot-text">{{item.goods_name}}</view>               
+                        </navigator>
+                    </view>
+                </view>
+
+                <view class="day-item">
+                    <text class="titletext days">天天特价</text>
+                    <view class="day">
+                        <navigator wx:key="unique" wx:for="{{sale}}" url="detail?goods_id={{item.goods_id}}">
+                            <view class="name">{{item.goods_name}}</view>
+                            <view class="price">￥{{item.goods_price}}</view> 
+                            <image src="{{item.goods_image}}"/>                
+                        </navigator>
+                    </view>
+                </view>
+
+                <view class="goods-icon">
+                    <text class="titletext eats">吃货秘籍</text>
+                    <view class="eat">
+                        <navigator wx:key="unique" wx:for="{{eat}}" url="detail?goods_id={{item.goods_id}}">
+                            <image src="{{item.goods_image}}"/>
+                            <view class="right">
+                                <view>{{item.goods_name}}</view>   
+                                <view class="eattext">{{item.goods_jingle}}</view>   
+                            </view>            
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+                                    
+        </scroll-view>
+    </swiper-item>
+
+    <!-- 生鲜果蔬 五谷杂粮 特产零食 药材干货 酒水饮料-->
+    <swiper-item wx:key="unique" wx:for="{{category}}" wx:for-index="id">
+        <scroll-view class="hot-box" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+
+         <!--<view class="banner" wx:key="unique" wx:for="{{mb_adv_list}}">
+                <image src="{{item.mb_adv_pic_url}}" class="slide-image" />
+         </view>-->
+
+           <view class="banner">
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:key="unique" wx:for="{{mb_adv_list}}">
+                        <swiper-item>
+                            <image src="{{item.mb_adv_pic_url}}" class="slide-image" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+
+            <view class='separator'></view>
+
+            <view class="snacks" wx:key="unique" wx:for="{{child}}">
+                <navigator url="sub?gca_parent_id={{item.gca_parent_id}}&gca_id={{item.gca_id}}&current={{index}}">
+                    <view>{{item.gca_name}}</view>
+                    <view class="desctxt">{{item.gca_desc}}</view>
+                    <image src="{{item.gca_image}}"/>
+                </navigator>
+           </view>
+
+            <view class="goods">
+                <text class="titletext selected">精选商品</text>
+            </view> 
+
+            <view class='goods-item' wx:key="unique" wx:for="{{goods_list}}" wx:if="{{id+1 == gca_id}}"> 
+
+                <view class="goods-item-box">
+                    <navigator url="detail?goods_id={{item.goods_id}}">
+                        <image class='productimg' src='{{item.goods_image}}'/>  
+                            <view class="producttext">
+                                <view class="goods-name">{{item.goods_name}}</view>
+                                <view class="price">￥{{item.goods_price}}</view>
+                            </view>
+                    </navigator>
+                </view>
+
+            </view> 
+
+            <view>
+                <view>{{more}}</view>
+            </view>            
+        </scroll-view>
+    </swiper-item>
+
+</swiper>

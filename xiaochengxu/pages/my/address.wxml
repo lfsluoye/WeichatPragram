@@ -1,0 +1,44 @@
+<!-- pages/my/address.wxml -->
+<view class="main">
+    <scroll-view scroll-y="true" bindscrolltolower="loadList" class="layout">
+        <view class="line-narrow"></view>
+
+        <view class="content" wx:key="unique" wx:for="{{address}}">
+            <view class="item-box">
+                <view class="box">
+                    <view class="name">
+                        <view class="true-name">{{item.true_name}}</view>
+                        <view class="right">{{item.mob_phone}}</view>
+                    </view>
+                    
+                    <view class="address">
+                        <text class="default">{{item.is_default == 1 ? "[默认]" : ""}}</text>
+                        <text class="addressInfo">{{item.address_info}}</text>
+                    </view>
+                       
+                </view>
+
+                <view class="item-icon">
+                    <view class="item-del" bindtap="deleteAddress" data-id="{{index}}">
+                        <image src="../../images/system/del_b.png"></image>
+                    </view>
+
+                    <navigator url="addressEdit?id={{index}}" class="item-edit" bindtap="editAddress" data-id="{{index}}">
+                        <image src="../../images/system/bianji.png"></image>
+                    </navigator>
+                </view>                  
+            </view>
+        </view>
+
+        <!-- loading start -->
+        <view class="body-view">
+            <loading hidden="{{hidden}}" bindchange="loadingChange">
+                加载中...
+            </loading>
+        </view>
+        <!-- / loading end -->
+
+    </scroll-view>
+
+    <navigator url="addressOpera" class="addbtn">新增收货地址</navigator>
+</view>

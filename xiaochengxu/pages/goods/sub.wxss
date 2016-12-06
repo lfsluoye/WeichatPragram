@@ -1,0 +1,73 @@
+/*index.wxss*/
+
+/* 顶部导航 tabbar */
+.nav{
+    display: flex; 
+    z-index: 800;   
+    max-width: 640px;
+    border-bottom: 2px solid #F4F4F4; 
+}
+.nav-view{
+    white-space:nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.nav-name{
+    height: 60rpx;
+    line-height: 60rpx;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #8a8585;
+    border-bottom: 2px solid transparent;
+}
+.nav-hover{
+    color: #0a0a0a;
+    border-bottom: 2px solid #3aac6a;
+}
+/* content */
+.swiper-box{
+    display: flex; 
+    height: 100%; 
+    width: 100%; 
+    overflow: hidden; 
+}
+.nav-scroll{ 
+    display: flex; 
+    height: 100%; 
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, 
+                 "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif ;
+}
+.goods-item{
+    width: 45.5%;
+    display: inline-block;
+    flex-direction:column;
+    justify-content:center;
+    box-sizing:border-box;
+    margin: 3% 1.5% 3% 2.5%;
+}
+.productimg{
+    width: 100%;
+    height: 260rpx;
+}
+.producttext{
+    border: 1px solid #F3F3F3;
+    font-size: .65rem;
+}
+.goods-name{
+    font-size: 0.65rem;
+    color: #0a0a0a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.price{
+    color:red;
+    font-weight: bold;
+    font-size: .7rem;
+    padding: 10% 6% 6% 6%;
+}

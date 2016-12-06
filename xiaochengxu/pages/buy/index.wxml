@@ -1,0 +1,75 @@
+<view class="addressAdd">
+
+	<block wx:if="{{!address_id}}">
+	    <!--新增收货地址-->
+	    <navigator url="add?freight_hash={{freight_hash}}" class="addressWrap">
+	        <image src="../../images/system/buy1.png"></image>
+	        <text class="inner">新增收货地址</text>
+	        <text class="icon">></text>
+	    </navigator>
+	 </block>
+
+	 <block wx:else>
+	 	<!--读取收货人信息-->
+	 	<view class="addressShow">
+
+	 		<view class="addressLside">
+	 			<image src="../../images/system/address.png"></image>
+	 		</view>
+	 		<view class="addressRside">
+		 		<view class="info">
+			 		<text>收货人：</text>
+			 		<text class="name">{{address_info.true_name}}</text>
+			 		<text class="phone">{{address_info.mob_phone}}</text>
+			 	</view>
+			 	<view class="address">
+			 		<text>{{address_info.area_info}}</text>
+			 		<text>{{address_info.address}}</text>
+			 	</view>
+			</view>
+	 	</view>
+	 </block>
+
+
+    <view class="goodsWrap" wx:for="{{goods_info}}">
+
+    	<!--店铺信息-->
+	    <view class="storeInfo">
+	    	<image src="../../images/system/buy2.png"></image>
+	    	<text>{{item.store_name}}</text>
+	    </view>
+
+	    <!--商品信息-->
+	    <view class="goodsInfo">
+	    	<view class="goodsLside">
+	    		<image src="{{item.goods_list[0].goods_image_url}}"></image>
+	    	</view>
+	    	<view class="goodsRside">
+	    		<text class="name">{{item.goods_list[0].goods_name}}</text>
+	    		<view class="inner">
+		    		<view class="costWrap"><text class="cost">￥</text><text class="price">{{item.goods_list[0].goods_price}}</text></view>
+		    		<view class="numWrap"><text class="numIcon">x</text><text class="num">{{item.goods_list[0].goods_num}}</text></view>
+		    	</view>
+	    	</view>
+	    </view>
+
+	    <!--底部总价与提交功能-->
+	    <view class="footer">
+	    	<view class="footerWrap">
+		    	<view class="footLside">
+		    		<view class="flWrap">
+			    		<text class="inner">合计：</text>
+			    		<text class="cost">￥</text>
+			    		<text class="price">7.50</text>
+			    	</view>
+		    	</view>
+		    	<view class="footRside">
+		    		<view catchtap="buyStep">
+		    			提交订单
+		    		</view>
+		    	</view>
+		    </view>
+	    </view>
+	</view>
+
+</view>

@@ -1,0 +1,72 @@
+.line-narrow{
+    height: 2rpx;
+    width: 750rpx;
+    background-color: #E0E1E2;
+}
+.content{
+    padding: 10rpx 35rpx 35rpx 35rpx;
+}
+.name{
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #E4E4E4;
+}
+.txtname{
+    font-size: 32rpx;
+}
+/*地区选择*/
+.chooseWrap{
+	margin-left:200rpx;
+}
+.quyuname{
+    height: 360rpx;
+    border-bottom: 1px solid #E4E4E4;
+}
+.quyutxt{
+    margin-top: 25rpx;
+}
+.section{
+	margin: 65rpx;
+    font-size: 28rpx;
+}
+.iname{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100rpx;
+    font-size: 28rpx;
+}
+.address{
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.default{
+    width: 750rpx;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.switch{
+    padding-left: 380rpx;
+}
+.addbtn{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #3aac6a;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+}

@@ -1,0 +1,77 @@
+/* pages/my/address.wxss */
+.layout{
+    height: auto;
+    position: relative;
+}
+.line-narrow{
+    height: 2rpx;
+    width: 750rpx;
+    background-color: #E0E1E2;
+}
+.item-box{
+    height: 175rpx;
+    padding: 10rpx 35rpx 35rpx 35rpx;   
+    border-bottom: 10rpx solid #E4E4E4;
+}
+.box{
+    height: 135rpx;
+    border-bottom: 1px solid #E4E4E4;
+}
+.name{
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+.true-name{
+    font-size: 30rpx;
+}
+.right{
+    padding-left: 100rpx;
+    font-size: 28rpx;
+}
+.address{
+    font-size: 24rpx;
+    color: #9E9999;
+}
+.default{
+    color: #3aac6a;
+}
+.addressInfo{
+    padding-left: 10rpx;
+}
+.item-icon{
+    height: 80rpx;
+}
+.item-del{
+    line-height: 80rpx;
+}
+.item-edit{
+    line-height: 80rpx;
+    margin-top: -40rpx;
+}
+.item-del image{
+    width: 35rpx; 
+    height: 35rpx;
+}
+.item-edit image{
+    width: 35rpx; 
+    height: 35rpx;
+    float: right;
+    margin-top: -20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addbtn{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 auto;
+    position: fixed;
+    background-color: #3aac6a;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+}

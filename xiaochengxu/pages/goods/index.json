@@ -1,0 +1,5 @@
+{
+    "navigationBarTitleText":"农村特产",
+    "enablePullDownRefresh": true,
+    "onReachBottom": true
+}

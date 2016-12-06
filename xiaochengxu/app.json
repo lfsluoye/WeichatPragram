@@ -1,0 +1,56 @@
+{
+  "pages":[     
+    "pages/goods/index",
+    "pages/goods/detail",
+    "pages/goods/sub",
+    "pages/page/about",
+    "pages/page/help",
+    "pages/page/detail",
+    "pages/my/index",
+    "pages/my/collect",
+    "pages/history/index",
+    "pages/my/address",
+    "pages/my/addressOpera",
+    "pages/my/addressEdit",
+    "pages/cart/index",
+    "pages/order/index",
+    "pages/buy/index",
+    "pages/buy/add"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "个人中心",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": "true",
+    "onReachBottom": "true"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#3aac6a",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/goods/index",
+      "iconPath": "images/tabbar/index.png",
+      "selectedIconPath": "images/tabbar/index-active.png",
+      "text": "首页"
+    },{
+      "pagePath": "pages/cart/index",
+      "iconPath": "images/tabbar/cart.png",
+      "selectedIconPath": "images/tabbar/cart-active.png",
+      "text": "购物车"
+    },{
+      "pagePath": "pages/my/index",
+      "iconPath": "images/tabbar/my.png",
+      "selectedIconPath": "images/tabbar/my-active.png",
+      "text": "个人中心"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

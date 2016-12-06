@@ -1,0 +1,166 @@
+/*新增收货地址*/
+.addressWrap{
+	padding:20rpx 40rpx;
+	border-bottom:1px solid #e1e1e1;
+}
+.addressWrap image{
+	height:70rpx;
+	width:70rpx;
+	vertical-align:middle;
+}
+.addressWrap .inner{
+	margin-left:40rpx;
+	font-size:35rpx;
+	color:#0a0a0a;
+	vertical-align:middle;
+}
+.addressWrap .icon{
+	float:right;
+	font-size:35rpx;
+	line-height:70rpx;
+	font-weight:bold;
+}
+.addressLside{
+	display:inline-block;
+	vertical-align:top;
+}
+.addressLside image{
+	width:38rpx;
+	height:38rpx;
+}
+.addressRside{
+	display:inline-block;
+	margin-left:20rpx;
+	line-height:45rpx;
+	color:#555;
+}
+.addressRside .info .phone{
+	margin-left:20rpx;
+}
+.addressRside .info{
+	font-size:33rpx;
+}
+.addressRside .address{
+	font-size:28rpx;
+}
+.addressShow{
+	padding:20rpx 30rpx;
+	border-bottom:8px solid #ebebeb;
+}
+
+
+/*店铺信息*/
+.goodsWrap{
+	
+}
+.goodsWrap .storeInfo{
+	padding:30rpx;
+}
+.goodsWrap .storeInfo image{
+	width:38rpx;
+	height:38rpx;
+	vertical-align:middle;
+}
+.goodsWrap .storeInfo text{
+	margin-left:25rpx;
+	vertical-align:middle;
+	font-size:28rpx;	
+	color:#0a0a0a;
+}
+
+/*商品信息*/
+.goodsWrap .goodsInfo{
+	background:#f5f5f5;
+	padding:20rpx 30rpx;
+	overflow:hidden;
+	
+}
+.goodsWrap .goodsInfo .goodsLside{
+
+	float:left;
+}
+.goodsWrap .goodsInfo .goodsLside image{
+	width:120rpx;
+	height:120rpx;
+	display:block;
+}
+.goodsWrap .goodsInfo .goodsRside{
+	margin-left:150rpx;
+	position:relative;
+	height:120rpx;
+}
+.goodsWrap .goodsInfo .goodsRside .name{
+	font-size:30rpx;
+	color:#333;
+	display:block;
+}
+.goodsWrap .goodsInfo .goodsRside .inner{
+	overflow:hidden;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+.goodsWrap .goodsInfo .goodsRside .inner .costWrap{
+	float:left;
+}
+.goodsWrap .goodsInfo .goodsRside .inner .numWrap{
+	float:right;
+}
+.cost{
+	margin:0 5rpx;
+	font-size:23rpx;
+	color:#DB4453;
+}
+.goodsWrap .goodsInfo .goodsRside .numIcon{
+	margin:0 5rpx;
+	font-size:35rpx;
+	color:#DB4453;
+}
+.goodsWrap .goodsInfo .goodsRside .price{
+	color:#DB4453;
+	font-size:35rpx;
+}
+.goodsWrap .goodsInfo .goodsRside .num{
+	color:#DB4453;
+	font-size:35rpx;
+}
+
+/*底部功能*/
+.footer{
+	height:80rpx;
+}
+.footerWrap{
+	position:fixed;
+	bottom:0;
+	height:80rpx;
+	right:0;
+	left:0;
+	line-height:80rpx;
+
+}
+.footerWrap .footLside{
+	width:75%;
+	display:inline-block;
+	text-align:right;
+
+}
+.footerWrap .footLside .flWrap{
+	padding:0 20rpx;
+	font-size:40rpx;
+}
+.footerWrap .footLside .flWrap .inner{
+	color:#0a0a0a;
+}
+.footerWrap .footLside .flWrap .price{
+	color:#DB4453;
+}
+.footerWrap .footRside{
+	width:25%;
+	display:inline-block;
+	text-align:center;
+}
+.footerWrap .footRside view{
+	background:#3aac6a;
+	color:#fff;
+	font-size:35rpx;
+}

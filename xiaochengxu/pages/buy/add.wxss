@@ -1,0 +1,32 @@
+/*表单信息*/
+.addressInfo{
+	margin-left:40rpx;
+}
+.addressInfo view{
+	padding:20rpx 0;
+	border-bottom:1px solid #eee;
+}
+.addressInfo view text{
+	display:inline-block;
+	vertical-align:middle;
+	width:200rpx;
+	color:#0a0a0a;
+	font-size:38rpx;
+}
+.addressInfo view input{
+	display:inline-block;
+	vertical-align:middle;
+}
+.addressPlace{
+	color:#b4b4b4;
+	font-size:35rpx;
+}
+
+/*保存按钮*/
+.save{
+	margin:40rpx;
+}
+/*地区选择*/
+.chooseWrap{
+	margin-left:200rpx;
+}

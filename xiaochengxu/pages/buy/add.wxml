@@ -1,0 +1,39 @@
+<view class="container">
+    <form bindsubmit="save">
+        <view class="addressInfo">
+            <view class="addName">
+                <text>收货人</text>
+                <input type="text" placeholder="姓名" placeholder-class="addressPlace" name="name" />
+            </view>
+            <view class="addPhone">
+                <text>联系电话</text>
+                <input type="number" placeholder="手机或固定" maxlength="11" placeholder-class="addressPlace" name="phone"/>
+            </view>
+            <view class="addArea">
+                <text>选择地区</text>
+                <view class="chooseWrap">
+                    <picker value="{{shengIndex}}" range="{{shengList}}" bindchange="shengChange" >
+                        <view class="current">
+                            省份：{{shengList[shengIndex]}}
+                        </view>
+                    </picker>
+                    <picker value="{{shiIndex}}" range="{{shiList}}" bindchange="shiChange">
+                        <view class="current">
+                            城市：{{shiList[shiIndex]}}
+                        </view>
+                    </picker>
+                    <picker value="{{quIndex}}" range="{{quList}}" bindchange="quChange">
+                        <view class="current">
+                            区县：{{quList[quIndex]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="addAddress">
+                <text>详细地址</text>
+                <input type="text" placeholder="街道门牌信息" placeholder-class="addressPlace" name="address" />
+            </view>
+        </view>
+        <button class="save" type="primary" formType="submit">保存</button>
+    </form>
+</view>
