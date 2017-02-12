@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/cart/cart",
+    "pages/search/search",
+    "pages/profile/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "永定特产",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#3aac6a",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/tabbar/index.png",
+      "selectedIconPath": "images/tabbar/index-active.png",
+      "text": "首页"
+    },{
+      "pagePath": "pages/cart/cart",
+      "iconPath": "images/tabbar/cart.png",
+      "selectedIconPath": "images/tabbar/cart-active.png",
+      "text": "购物车"
+    },{
+      "pagePath": "pages/profile/profile",
+      "iconPath": "images/tabbar/my.png",
+      "selectedIconPath": "images/tabbar/my-active.png",
+      "text": "个人中心"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
